@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المصحف الشريف</title>
+    <style>
+        body { font-family: Tahoma, sans-serif; background: #121212; color: #fff; padding: 10px; margin: 0; }
+        h1 { text-align: center; color: #4CAF50; font-size: 20px; margin: 10px 0; }
+        
+        .search-box { display: flex; gap: 6px; margin-bottom: 12px; }
+        input { flex: 1; padding: 6px 8px; background: #1e1e1e; border: 1px solid #333; color: #fff; border-radius: 5px; font-size: 11px; width: 45%; }
+        
+        .surah-card { background: #1e1e1e; padding: 10px; margin: 8px 0; border-radius: 8px; border: 1px solid #333; }
+        h3 { margin: 0 0 5px 0; font-size: 16px; color: #4CAF50; }
+        p { margin: 3px 0; font-size: 12px; color: #ccc; }
+        
+        .btn-group { display: flex; gap: 6px; margin-top: 6px; }
+        button { background: #4CAF50; color: white; border: none; padding: 6px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+        button:active { background: #45a049; }
+        .play-surah-btn { background: #2196F3; }
+        
+        .ayahs-box { background: #1a1a1a; padding: 12px; margin-top: 8px; border-radius: 5px; display: none; line-height: 2.2; font-size: 16px; text-align: justify; }
+        
+        .ayah-text { display: inline; cursor: pointer; padding: 2px 4px; border-radius: 4px; transition: background 0.2s; }
+        .ayah-text:active { background: #333; }
+        .ayah-number { font-size: 12px; color: #4CAF50; margin: 0 3px; }
+        
+        audio { width: 100%; margin-top: 8px; display: none; }
+    </style>
+</head>
+<body>
+
+    <h1>المصحف الشريف</h1>
+    
+    <div class="search-box">
+        <input type="text" id="searchSurah" placeholder="بحث عن سورة..." oninput="filterSurahs()">
+        <input type="text" id="searchAyah" placeholder="بحث في الآيات..." oninput="filterAyahs()">
+    </div>
+
+    <div id="surahs-container">جاري تحميل السور...</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
